@@ -1,0 +1,18 @@
+
+</div>
+  <!---side-bar-end--->
+</div>
+<!---page-end--->
+<div class="clearing"></div>
+<div class="primary-footer">
+  <div class="copyright-wrap">
+    <div class="panel">
+      <div class="content">
+        <P style="font-size:24px;">Governament polytecknic kalaburagi</P>
+      </div>
+    </div>
+  </div>
+</div>
+<!--primary-footer-end--->
+</body>
+</html>

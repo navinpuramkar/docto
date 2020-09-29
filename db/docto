@@ -1,0 +1,235 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.0.19-nt
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema docto
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ docto;
+USE docto;
+
+--
+-- Table structure for table `docto`.`doctorregistration`
+--
+
+DROP TABLE IF EXISTS `doctorregistration`;
+CREATE TABLE `doctorregistration` (
+  `name` varchar(50) default NULL,
+  `username` varchar(30) NOT NULL,
+  `worksat` varchar(20) default NULL,
+  `qualification` varchar(20) default NULL,
+  `specilization` varchar(20) default NULL,
+  `experience` varchar(20) default NULL,
+  `emailid` varchar(40) default NULL,
+  `mobilenumber` varchar(20) default NULL,
+  `password` varchar(20) default NULL,
+  `monday` varchar(20) default NULL,
+  `tuesday` varchar(20) default NULL,
+  `wednesday` varchar(20) default NULL,
+  `thursday` varchar(20) default NULL,
+  `friday` varchar(20) default NULL,
+  `saturday` varchar(20) default NULL,
+  `sunday` varchar(20) default NULL,
+  `onrequest` varchar(20) default NULL,
+  `health` varchar(20) default NULL,
+  `government` varchar(20) default NULL,
+  `fee` varchar(20) default NULL,
+  `area` varchar(20) default NULL,
+  `photo` varchar(30) default NULL,
+  `usertype` varchar(20) default NULL,
+  `status` varchar(20) default NULL,
+  PRIMARY KEY  (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `docto`.`doctorregistration`
+--
+
+/*!40000 ALTER TABLE `doctorregistration` DISABLE KEYS */;
+INSERT INTO `doctorregistration` (`name`,`username`,`worksat`,`qualification`,`specilization`,`experience`,`emailid`,`mobilenumber`,`password`,`monday`,`tuesday`,`wednesday`,`thursday`,`friday`,`saturday`,`sunday`,`onrequest`,`health`,`government`,`fee`,`area`,`photo`,`usertype`,`status`) VALUES 
+ ('karthik','karthik','','mbbs','Gastroenterologist','1','karthik@gmail.com','9878989796','1234','','Tuesday','','','','','','null','','','200','kalaburagi','Tulips.jpg','2','pending'),
+ ('nagesh','nagesh','','MBBS','Cardiologist','1','nagesh@gmail.com','9900943894','1234','Monday','','','','','','','null','','Health','100','kalaburagi','Lighthouse.jpg','2','pending'),
+ ('naresh','naresh','','mbbs','Urologist','1','naresh@gmail.com','9663716168','1234','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday','yes','Health','Health','200','kalaburagi','null','2','pending'),
+ ('pawan','pawan','','mbbs','Dentist','2','pawan@gmail.com','7686876645','1234','Monday','Tuesday','Wednesday','Thursday','Friday','','','null','','','100','kaLaburagi','Desert.jpg','2','pending'),
+ ('rahul','rahul','','mbbs','Neurologist','2','rahul@gmail.com','8736487767','1234','','Tuesday','','','','','','null','','','100','kalaburagi','Chrysanthemum.jpg','2','Approved');
+INSERT INTO `doctorregistration` (`name`,`username`,`worksat`,`qualification`,`specilization`,`experience`,`emailid`,`mobilenumber`,`password`,`monday`,`tuesday`,`wednesday`,`thursday`,`friday`,`saturday`,`sunday`,`onrequest`,`health`,`government`,`fee`,`area`,`photo`,`usertype`,`status`) VALUES 
+ ('shalini','shalini','','MBBS','Kidney','4','shalinirk3@gmail.com','9876543211','123','','','','','','','','null','on','null','200','ram nagar','12.png','2','Approved'),
+ ('shweta','shweta','','MBBS','Heart','4','shweta@gmail.com','9876544321','123','Monday','Monday','Wednesday','Thursday','','','','null','','Health','100','ram nagar','5.png','2','pending');
+/*!40000 ALTER TABLE `doctorregistration` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `docto`.`fixappointment`
+--
+
+DROP TABLE IF EXISTS `fixappointment`;
+CREATE TABLE `fixappointment` (
+  `appointmentid` int(11) NOT NULL auto_increment,
+  `doctorname` varchar(50) default NULL,
+  `requestedby` varchar(40) default NULL,
+  `status` varchar(20) default NULL,
+  `doctoremailid` varchar(40) default NULL,
+  PRIMARY KEY  (`appointmentid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `docto`.`fixappointment`
+--
+
+/*!40000 ALTER TABLE `fixappointment` DISABLE KEYS */;
+INSERT INTO `fixappointment` (`appointmentid`,`doctorname`,`requestedby`,`status`,`doctoremailid`) VALUES 
+ (24,'shalini','shalini','Approved','null'),
+ (25,'pawan','naveenpurmkar','Approved','null'),
+ (26,'rahul','naveenpurmkar','Approved','null');
+/*!40000 ALTER TABLE `fixappointment` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `docto`.`tblappointmentdetails`
+--
+
+DROP TABLE IF EXISTS `tblappointmentdetails`;
+CREATE TABLE `tblappointmentdetails` (
+  `appointmentid` int(11) NOT NULL auto_increment,
+  `patientname` varchar(50) default NULL,
+  `doctorname` varchar(50) default NULL,
+  `date` varchar(30) default NULL,
+  `time` varchar(30) default NULL,
+  PRIMARY KEY  (`appointmentid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `docto`.`tblappointmentdetails`
+--
+
+/*!40000 ALTER TABLE `tblappointmentdetails` DISABLE KEYS */;
+INSERT INTO `tblappointmentdetails` (`appointmentid`,`patientname`,`doctorname`,`date`,`time`) VALUES 
+ (1,'shalini','shalini','12-06-2016','12:00'),
+ (2,'naveenpurmkar','rahul','2017-03-31','10:30');
+/*!40000 ALTER TABLE `tblappointmentdetails` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `docto`.`tblfeedback`
+--
+
+DROP TABLE IF EXISTS `tblfeedback`;
+CREATE TABLE `tblfeedback` (
+  `fid` int(11) NOT NULL auto_increment,
+  `doctorname` varchar(30) default NULL,
+  `feed` varchar(200) default NULL,
+  `givenby` varchar(20) default NULL,
+  PRIMARY KEY  (`fid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `docto`.`tblfeedback`
+--
+
+/*!40000 ALTER TABLE `tblfeedback` DISABLE KEYS */;
+INSERT INTO `tblfeedback` (`fid`,`doctorname`,`feed`,`givenby`) VALUES 
+ (1,'shalini','good','shalini'),
+ (2,'rahul','best','naveenpurmkar');
+/*!40000 ALTER TABLE `tblfeedback` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `docto`.`tblofflinechat`
+--
+
+DROP TABLE IF EXISTS `tblofflinechat`;
+CREATE TABLE `tblofflinechat` (
+  `chatid` int(11) NOT NULL auto_increment,
+  `doctorname` varchar(40) default NULL,
+  `patientname` varchar(30) default NULL,
+  `chat` text,
+  `date` varchar(50) default NULL,
+  `reply` text,
+  PRIMARY KEY  (`chatid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `docto`.`tblofflinechat`
+--
+
+/*!40000 ALTER TABLE `tblofflinechat` DISABLE KEYS */;
+INSERT INTO `tblofflinechat` (`chatid`,`doctorname`,`patientname`,`chat`,`date`,`reply`) VALUES 
+ (1,'shalini','shalini',' i am feeling allergy','Thu May 05 01:46:45 IST 2016','drink water'),
+ (2,'rahul','naveenpurmkar','hi','Thu Mar 16 19:10:56 IST 2017','hello tell me your problem');
+/*!40000 ALTER TABLE `tblofflinechat` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `docto`.`tbluploadreports`
+--
+
+DROP TABLE IF EXISTS `tbluploadreports`;
+CREATE TABLE `tbluploadreports` (
+  `rid` int(11) NOT NULL auto_increment,
+  `patientname` varchar(40) default NULL,
+  `report` varchar(40) default NULL,
+  PRIMARY KEY  (`rid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `docto`.`tbluploadreports`
+--
+
+/*!40000 ALTER TABLE `tbluploadreports` DISABLE KEYS */;
+INSERT INTO `tbluploadreports` (`rid`,`patientname`,`report`) VALUES 
+ (1,'naveenpurmkar','Koala.jpg');
+/*!40000 ALTER TABLE `tbluploadreports` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `docto`.`tbluserregister`
+--
+
+DROP TABLE IF EXISTS `tbluserregister`;
+CREATE TABLE `tbluserregister` (
+  `name` varchar(40) default NULL,
+  `lastname` varchar(30) default NULL,
+  `username` varchar(30) NOT NULL,
+  `emailid` varchar(30) default NULL,
+  `mobilenumber` varchar(20) default NULL,
+  `alternativenumber` varchar(20) default NULL,
+  `password` varchar(20) default NULL,
+  `gender` varchar(20) default NULL,
+  `age` varchar(20) default NULL,
+  `blooggroup` varchar(20) default NULL,
+  `city` varchar(40) default NULL,
+  `photo` varchar(50) default NULL,
+  PRIMARY KEY  (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `docto`.`tbluserregister`
+--
+
+/*!40000 ALTER TABLE `tbluserregister` DISABLE KEYS */;
+INSERT INTO `tbluserregister` (`name`,`lastname`,`username`,`emailid`,`mobilenumber`,`alternativenumber`,`password`,`gender`,`age`,`blooggroup`,`city`,`photo`) VALUES 
+ ('navin','puramkar','naveenpurmkar','naveenpuramkar@gmail.com','9663716168','9900943893','1234','Male','20','0','Gulbarga','Jellyfish.jpg'),
+ ('netra','jewargi','netra','netra@gmail.com','9876544321','9987654321','123','Female','22','A+','Gulbarga','img2.jpg'),
+ ('shalini','kolli','shalini','shalinirk3@gmail.com','9876543211','9987654321','123','Female','22','A+','Gulbarga','11.png');
+/*!40000 ALTER TABLE `tbluserregister` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

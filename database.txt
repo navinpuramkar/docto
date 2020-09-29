@@ -1,0 +1,4 @@
+create table doctorregister(did int primary key,dname varchar(50),worksat  varchar(50),qualification varchar(50),specilization varchar(50),experience varchar(50),emailid varchar(30),mobile varchar(20),password varchar(20));
+
+
+create table userregister(uid int primary key auto_increment,name varchar(50),emailid varchar(30),mobileNo varchar(10), password varchar(30),gender varchar(10),city varchar(20));

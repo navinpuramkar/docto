@@ -1,0 +1,31 @@
+<body>
+<div class="menu-wrap">
+  <div class="menu">
+    <ul>
+      <li><a href="userhome.jsp" class="active">home</a></li>
+      <li><a href="userseekappointment.jsp">REQUEST APPOINTMENT</a></li>
+	<li><a href="feedback.jsp">feedback </a></li>
+	 <li><a href="userviewappointmentdetails.jsp">Appointments</a></li>
+	 <li><a href="userviewchat.jsp">Inbox</a></li>
+ 	 <li><a href="uploadreport.jsp">Upload Report</a></li>
+	
+     <li><a href="userchangepassword.jsp">Change Password</a></li>
+	 <li><a href="offlinechat.jsp">Chat</a></li>
+ 
+     <li><a href="index.jsp">Logout </a></li>
+      
+          </ul>
+  </div>
+</div>
+<!--------menu wrap ends--------->
+<div class="clearing"></div>
+<div class="header">
+  <div class="logo">
+    <h1>DOCTOR APPOINTMENT </h1>
+  </div>
+ 
+</div>
+<!--------header wrap ends--------->
+<!--------banner end-------->
+<div class="page">
+<div align="center">

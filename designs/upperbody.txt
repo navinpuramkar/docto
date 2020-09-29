@@ -1,0 +1,27 @@
+<body>
+<div class="menu-wrap">
+  <div class="menu">
+    <ul>
+      <li><a href="index.jsp" class="active">home</a></li>
+	<li><a href="login.jsp">Login</a></li>
+      <li><a href="Userregister.jsp">USER REGISTER</a></li>
+      <li><a href="doctorregister.jsp">DOCTOR REGISTER</a></li>
+      <li><a href="aboutus.jsp">ABOUT US </a></li>
+      <li><a href="contactus.jsp">Contact Us</a></li>
+    </ul>
+  </div>
+</div>
+<!--------menu wrap ends--------->
+<div class="clearing"></div>
+<div class="header">
+  <div class="logo">
+    <h1>DOCTOR APPOINTMENT </h1>
+  </div>
+ 
+</div>
+<!--------header wrap ends--------->
+<div class="banner">
+ </div>
+<!--------banner end-------->
+<div class="page">
+<div align="center">
